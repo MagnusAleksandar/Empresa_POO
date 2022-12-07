@@ -10,8 +10,8 @@ package Modelo;
  */
 public class SGenerales extends Operario{
 
-    public SGenerales(int id, String nom, String ape, double tel, double cc, double sal, String correo, int horasExtras, double subTrans) {
-        super(id, nom, ape, tel, cc, sal, correo, horasExtras, subTrans);
+    public SGenerales(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t, int horasExtras, double subTrans) {
+        super(id, nom, ape, tel, cc, sal, correo, t, horasExtras, subTrans);
     }
     
 }
