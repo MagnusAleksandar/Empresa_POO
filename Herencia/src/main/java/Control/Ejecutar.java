@@ -5,6 +5,7 @@
 package Control;
 //import Vista.InOut;
 import Modelo.Operario;
+import Vista.InOut;
 /**
  *
  * @author DJJORGEGUTIERREZ
@@ -12,9 +13,10 @@ import Modelo.Operario;
 public class Ejecutar {
    // static InOut ob=new InOut();
     static Operario p=new Operario();
-    
+    static InOut d=new InOut();
     public static void main(){
- p.CalHoras();
+        d.mostrarRes("Bienvenido a EmpresasFactoy's");
+        
 }
 }
 
