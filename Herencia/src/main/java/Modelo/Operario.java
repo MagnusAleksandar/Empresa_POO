@@ -3,22 +3,22 @@ package Modelo;
 import Vista.InOut;
 
 public class Operario extends Empleado{
-    private int horaExtra;
+    private char horaExtra;
     private double subTrans;
     private int descS;
     private int descP;
     
-    public Operario(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t, int he,double st) {
+    public Operario(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t, char he,double st) {
         super(id, nom, ape, tel, cc, sal, correo, t);
         this.horaExtra=he;
         this.subTrans=st;
     }
 
-    public int getHoraExtra() {
+    public char getHoraExtra() {
         return horaExtra;
     }
 
-    public void setHoraExtra(int horaExtra) {
+    public void setHoraExtra(char horaExtra) {
         this.horaExtra = horaExtra;
     }
 
