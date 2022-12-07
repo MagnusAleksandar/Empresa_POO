@@ -10,8 +10,8 @@ package Modelo;
  */
 public class PreServicio extends AtCliente{
 
-    public PreServicio(int id, String nom, String ape, double tel, double cc, double sal, String correo) {
-        super(id, nom, ape, tel, cc, sal, correo);
+    public PreServicio(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t) {
+        super(id, nom, ape, tel, cc, sal, correo,t);
     }
     
 }
