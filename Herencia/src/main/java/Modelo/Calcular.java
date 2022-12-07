@@ -31,12 +31,13 @@ public class Calcular {
         }
     }
     
-    public double nominaTotal(){
+    public void nominaTotal(){
         double total=0, salario;
-        salario=0;
-        total=salario+total;
+        for(int i=0;i<em.length;i++){
+            salario=em[i].getSal();
+            total=salario+total;
+        }
         ob.mostrarRes("Lo que la mepresa paga a todos sus empleados en total es:"+total);
-        return total;
     }
     
     public double calcularPrestamo(double salario){
