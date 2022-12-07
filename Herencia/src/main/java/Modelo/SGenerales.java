@@ -9,5 +9,9 @@ package Modelo;
  * @author DJJORGEGUTIERREZ
  */
 public class SGenerales extends Operario{
+
+    public SGenerales(int id, String nom, String ape, double tel, double cc, double sal, String correo, int horasExtras, double subTrans) {
+        super(id, nom, ape, tel, cc, sal, correo, horasExtras, subTrans);
+    }
     
 }
