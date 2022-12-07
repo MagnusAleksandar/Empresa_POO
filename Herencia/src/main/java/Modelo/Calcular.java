@@ -16,7 +16,7 @@ public class Calcular {
     public void pedirDatos(){
         int id=0; 
         String nom="", ap="", co="";
-        double tel=0, cc=0, sal=0, p=0, b=0, bon=0,st=0;
+        double tel=0, cc=0, sal=0, p=0, b=0, bon=0,st=0,pres=0;
         char t=' ',m=' ', he=' ';
         for(int i=0; i<em.length; i++){
             if(i==0){
@@ -45,10 +45,11 @@ public class Calcular {
                         }while(sal<salMin);
                     }
                     p=Pretaciones(sal);
+                    pres=calcularPrestamo();
                     if(t=='b'){
-                        g[i]=new Gerente(id, nom, ap, tel, cc, sal, co, t, p)
+                        g[i]=new Gerente(id, nom, ap, tel, cc, sal, co, t, p, pres);
                     }else{
-                        su[i]=new Subgerente(id, nom, ap, tel, cc, sal, co, t, p);
+                        su[i]=new Subgerente(id, nom, ap, tel, cc, sal, co, t, p, pres);
                     }
                     break;
                 case 'p':
