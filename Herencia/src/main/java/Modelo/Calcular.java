@@ -19,13 +19,17 @@ public class Calcular {
         char t=' ',m, he;
         for(int i=0; i<em.length; i++){
             if(i==0){
-            id=ob.pedirEntero("Inserte el ID de su empleado");
+            do{
+                id=ob.pedirEntero("Inserte el ID de su empleado");
+            }while(!verificarP(id,i)&&!verificarPos(id));
             nom=ob.pedirString("Inserte el nombre de su empleado");
             ap=ob.pedirString("Inserte el apellido de su empleado");
             co=ob.pedirString("Inserte el correo de su empleado");
             tel=ob.pedirDouble("Inserte el telefono de su empleado");
             cc=ob.pedirDouble("Inserte la cedula de su empleado");
-            sal=ob.pedirDouble("Inserte el salario de su empleado");
+            do{
+                sal=ob.pedirDouble("Inserte el salario de su empleado");
+            }while(!verificarPos(sal));
             t=ob.pedirChar("Inserte el tipo de empleado:\ng: Gerente"
                     + "\nb: Subgerente"
                     + "\np: Servicio al cliente de planta"
@@ -91,6 +95,25 @@ public class Calcular {
                 default: ob.mostrarRes("Ingrese un caracter valido");break;
             }
         }
+    }
+    
+    public boolean verificarP( int id, int indice){
+      boolean es=false;
+        for(int i=0; i<indice; i++){
+           if(em[i].getId()==id){
+               es=true;
+           }
+        }
+      return es;
+    }
+    
+    public boolean verificarPos(double in){
+        boolean es=false;
+        if(in>=0){
+            return true;
+        }else{
+           return es;  
+      }
     }
     
     public void nominaTotal(){
