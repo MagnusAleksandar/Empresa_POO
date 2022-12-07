@@ -16,9 +16,10 @@ public class Empleado {
     private double cedula;
     double salario;
     private String correo;
+    char tipo;
 
     
-     public Empleado(int id, String nom,String ape,double tel,double cc,double sal,String correo) {
+     public Empleado(int id, String nom,String ape,double tel,double cc,double sal,String correo, char tipo) {
         this.id = id;
         this.nombre=nom;
         this.apellido=ape;
@@ -26,6 +27,7 @@ public class Empleado {
         this.cedula=cc;
         this.salario=sal;
         this.correo=correo;
+        this.tipo=tipo;
     }
 
     
