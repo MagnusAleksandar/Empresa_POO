@@ -45,7 +45,7 @@ public class Calcular {
                         }while(sal<salMin);
                     }
                     p=Pretaciones(sal);
-                    pres=calcularPrestamo();
+                    pres=calcularPrestamo(sal);
                     if(t=='b'){
                         g[i]=new Gerente(id, nom, ap, tel, cc, sal, co, t, p, pres);
                     }else{
@@ -99,12 +99,13 @@ public class Calcular {
             salario = em1.getSal();
             total=salario+total;
         }
-        ob.mostrarRes("Lo que la mepresa paga a todos sus empleados en total es:"+total);
+        ob.mostrarRes("Lo que la empresa paga a todos sus empleados en total es:"+total);
     }
     
-    public double calcularPrestamo(){
+    public double calcularPrestamo(double sal){
         double prest,tp=0;
-        prest=ob.pedirDouble("ingrese cantidad de prestamo");
+        prest=ob.pedirDouble("Ingrese porcentaje del salario");
+        tp=sal*(prest/100);
         return tp;
     }
     public double calcularBonificacion(double bon){
