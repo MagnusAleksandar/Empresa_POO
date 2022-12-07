@@ -11,8 +11,8 @@ package Modelo;
 public class Subgerente extends Administrativo{
     private String descr;
     
-    public Subgerente(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t, double prs) {
-        super(id, nom, ape, tel, cc, sal, correo, t, prs);
+    public Subgerente(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t, double prs, double cuota) {
+        super(id, nom, ape, tel, cc, sal, correo, t, prs, cuota);
     }
 
     public String getDescr() {
