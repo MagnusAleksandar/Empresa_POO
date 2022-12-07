@@ -5,8 +5,8 @@ public class AtCliente extends Empleado {
     private int descP;
     
 
-    public AtCliente(int id, String nom, String ape, double tel, double cc, double sal, String correo) {
-        super(id, nom, ape, tel, cc, sal, correo);
+    public AtCliente(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t) {
+        super(id, nom, ape, tel, cc, sal, correo, t);
     }
 
     public int getDescS() {
