@@ -6,14 +6,13 @@ public class Calcular {
     double salMin=4000000;
     Gerente g[];
     Subgerente su[];
-    Maquina m[];
+    Maquina mq[];
     Planta pl[];
     PreServicio ps[];
     SGenerales sg[];
-    Subgerente sub[];
     Empleado em[];
     
-    public void pedirDatos(){
+    public void menusec(){
         int id=0; 
         String nom="", ap="", co="";
         double tel=0, cc=0, sal=0, p=0, b=0, bon=0,st=0,pres=0;
@@ -89,6 +88,7 @@ public class Calcular {
                     he=ob.pedirChar("¿Hace horas extra?");
                     sg[i]=new SGenerales(id, nom, ap, tel, cc, sal, co, t, he, st);
                     break;
+                default: ob.mostrarRes("Ingrese un caracter valido");break;
             }
         }
     }
@@ -126,5 +126,88 @@ public class Calcular {
         double salario=0;
         salario+=salario*0.02;
         return salario;
+    }
+    
+    public void mostrarEmp(){
+        int id;
+        id=ob.pedirEntero("Ingrese la cedula del empleado");
+        boolean est=false;
+        int ind=0;
+        for(int i=0; i<em.length; i++){
+            if(em[i].getCc()==id){
+                est=true;
+                ind=i;
+            }
+        }        
+       if(est) {       
+          ob.mostrarRes("El empleado es: "+em[ind]);
+        }else{
+           ob.mostrarRes("Cedula invalida");
+        }  
+    }
+    
+    public void mostrarTodos(){
+        String m="";
+        for(int i=0;i<em.length;i++){
+            m+="Cedula: "+em[i].getCc()+"Nombre: "+em[i].getNom()+"Apellido: "+em[i].getApe()
+                    +"Correo: "+em[i].getCorreo()+"Telefono: "+em[i].getTel()+"Salario: "+em[i].getSal()+"\n";
+        }
+        ob.mostrarRes(m);
+    }
+    
+    public void mostrarCat(){
+        String m="";
+        char op;
+        op=ob.pedirChar("Elija el tipo de empleado a mostrar:\ng: Gerente"
+                    + "\nb: Subgerente"
+                    + "\np: Servicio al cliente de planta"
+                    + "\nr: Servicio al cliente por prestacion de servicios"
+                    + "\ns: De servicios generales"
+                    + "\nm: Operario de maquina");
+        switch(op){
+            case 'g':
+                for(int i=0;i<g.length;i++){
+                m+="Cedula: "+g[i].getCc()+"Nombre: "+g[i].getNom()
+                +"Apellido: "+g[i].getApe()+"Correo: "+g[i].getCorreo()
+                +"Telefono: "+g[i].getTel()+"Salario: "+g[i].getSal()+"\n";
+                }
+                break;
+            case 'b':
+                for(int i=0;i<su.length;i++){
+                    m+="Cedula: "+su[i].getCc()+"Nombre: "+su[i].getNom()
+                    +"Apellido: "+su[i].getApe()+"Correo: "+su[i].getCorreo()
+                    +"Telefono: "+su[i].getTel()+"Salario: "+su[i].getSal()+"\n";
+                }
+                break;
+            case 'p':
+                for(int i=0;i<pl.length;i++){
+                    m+="Cedula: "+pl[i].getCc()+"Nombre: "+pl[i].getNom()
+                    +"Apellido: "+pl[i].getApe()+"Correo: "+pl[i].getCorreo()
+                    +"Telefono: "+pl[i].getTel()+"Salario: "+pl[i].getSal()+"\n";
+                }
+                break;
+            case 'r':
+                for(int i=0;i<ps.length;i++){
+                    m+="Cedula: "+ps[i].getCc()+"Nombre: "+ps[i].getNom()
+                    +"Apellido: "+ps[i].getApe()+"Correo: "+ps[i].getCorreo()
+                    +"Telefono: "+ps[i].getTel()+"Salario: "+ps[i].getSal()+"\n";
+                }
+                break;
+            case 's':
+                for(int i=0;i<sg.length;i++){
+                    m+="Cedula: "+sg[i].getCc()+"Nombre: "+sg[i].getNom()
+                    +"Apellido: "+sg[i].getApe()+"Correo: "+sg[i].getCorreo()
+                    +"Telefono: "+sg[i].getTel()+"Salario: "+sg[i].getSal()+"\n";
+                }
+                break;
+            case 'm':
+                for(int i=0;i<mq.length;i++){
+                    m+="Cedula: "+mq[i].getCc()+"Nombre: "+mq[i].getNom()
+                    +"Apellido: "+mq[i].getApe()+"Correo: "+mq[i].getCorreo()
+                    +"Telefono: "+mq[i].getTel()+"Salario: "+mq[i].getSal()+"\n";
+                }
+                break;
+        }
+        ob.mostrarRes(m);
     }
 }    
