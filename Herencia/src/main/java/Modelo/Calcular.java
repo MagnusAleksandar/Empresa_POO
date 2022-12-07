@@ -15,8 +15,8 @@ public class Calcular {
     public void menusec(){
         int id=0; 
         String nom="", ap="", co="";
-        double tel=0, cc=0, sal=0, p=0, b=0, bon=0,st=0,pres=0;
-        char t=' ',m=' ', he=' ';
+        double tel=0, cc=0, sal=0, p=0, b=0, bon,st=0,pres;
+        char t=' ',m, he;
         for(int i=0; i<em.length; i++){
             if(i==0){
             id=ob.pedirEntero("Inserte el ID de su empleado");
@@ -103,7 +103,7 @@ public class Calcular {
     }
     
     public double calcularPrestamo(double sal){
-        double prest,tp=0;
+        double prest,tp;
         prest=ob.pedirDouble("Ingrese porcentaje del salario");
         tp=sal*(prest/100);
         return tp;
@@ -148,9 +148,8 @@ public class Calcular {
     
     public void mostrarTodos(){
         String m="";
-        for(int i=0;i<em.length;i++){
-            m+="Cedula: "+em[i].getCc()+"Nombre: "+em[i].getNom()+"Apellido: "+em[i].getApe()
-                    +"Correo: "+em[i].getCorreo()+"Telefono: "+em[i].getTel()+"Salario: "+em[i].getSal()+"\n";
+        for (Empleado em1 : em) {
+            m += "Cedula: " + em1.getCc() + "Nombre: " + em1.getNom() + "Apellido: " + em1.getApe() + "Correo: " + em1.getCorreo() + "Telefono: " + em1.getTel() + "Salario: " + em1.getSal() + "\n";
         }
         ob.mostrarRes(m);
     }
@@ -166,47 +165,71 @@ public class Calcular {
                     + "\nm: Operario de maquina");
         switch(op){
             case 'g':
-                for(int i=0;i<g.length;i++){
-                m+="Cedula: "+g[i].getCc()+"Nombre: "+g[i].getNom()
-                +"Apellido: "+g[i].getApe()+"Correo: "+g[i].getCorreo()
-                +"Telefono: "+g[i].getTel()+"Salario: "+g[i].getSal()+"\n";
-                }
+            for (Gerente g1 : g) {
+                m += "Cedula: " + g1.getCc() + "Nombre: " + g1.getNom() + "Apellido: " + g1.getApe() + "Correo: " + g1.getCorreo() + "Telefono: " + g1.getTel() + "Salario: " + g1.getSal() + "\n";
+            }
                 break;
+
             case 'b':
-                for(int i=0;i<su.length;i++){
-                    m+="Cedula: "+su[i].getCc()+"Nombre: "+su[i].getNom()
-                    +"Apellido: "+su[i].getApe()+"Correo: "+su[i].getCorreo()
-                    +"Telefono: "+su[i].getTel()+"Salario: "+su[i].getSal()+"\n";
-                }
+            for (Subgerente su1 : su) {
+                m += "Cedula: " + su1.getCc() + "Nombre: " + su1.getNom() + "Apellido: " + su1.getApe() + "Correo: " + su1.getCorreo() + "Telefono: " + su1.getTel() + "Salario: " + su1.getSal() + "\n";
+            }
                 break;
+
             case 'p':
-                for(int i=0;i<pl.length;i++){
-                    m+="Cedula: "+pl[i].getCc()+"Nombre: "+pl[i].getNom()
-                    +"Apellido: "+pl[i].getApe()+"Correo: "+pl[i].getCorreo()
-                    +"Telefono: "+pl[i].getTel()+"Salario: "+pl[i].getSal()+"\n";
-                }
+            for (Planta pl1 : pl) {
+                m += "Cedula: " + pl1.getCc() + "Nombre: " + pl1.getNom() + "Apellido: " + pl1.getApe() + "Correo: " + pl1.getCorreo() + "Telefono: " + pl1.getTel() + "Salario: " + pl1.getSal() + "\n";
+            }
                 break;
+
             case 'r':
-                for(int i=0;i<ps.length;i++){
-                    m+="Cedula: "+ps[i].getCc()+"Nombre: "+ps[i].getNom()
-                    +"Apellido: "+ps[i].getApe()+"Correo: "+ps[i].getCorreo()
-                    +"Telefono: "+ps[i].getTel()+"Salario: "+ps[i].getSal()+"\n";
-                }
+            for (PreServicio p : ps) {
+                m += "Cedula: " + p.getCc() + "Nombre: " + p.getNom() + "Apellido: " + p.getApe() + "Correo: " + p.getCorreo() + "Telefono: " + p.getTel() + "Salario: " + p.getSal() + "\n";
+            }
                 break;
+
             case 's':
-                for(int i=0;i<sg.length;i++){
-                    m+="Cedula: "+sg[i].getCc()+"Nombre: "+sg[i].getNom()
-                    +"Apellido: "+sg[i].getApe()+"Correo: "+sg[i].getCorreo()
-                    +"Telefono: "+sg[i].getTel()+"Salario: "+sg[i].getSal()+"\n";
-                }
+            for (SGenerales sg1 : sg) {
+                m += "Cedula: " + sg1.getCc() + "Nombre: " + sg1.getNom() + "Apellido: " + sg1.getApe() + "Correo: " + sg1.getCorreo() + "Telefono: " + sg1.getTel() + "Salario: " + sg1.getSal() + "\n";
+            }
                 break;
+
             case 'm':
-                for(int i=0;i<mq.length;i++){
-                    m+="Cedula: "+mq[i].getCc()+"Nombre: "+mq[i].getNom()
-                    +"Apellido: "+mq[i].getApe()+"Correo: "+mq[i].getCorreo()
-                    +"Telefono: "+mq[i].getTel()+"Salario: "+mq[i].getSal()+"\n";
-                }
+            for (Maquina mq1 : mq) {
+                m += "Cedula: " + mq1.getCc() + "Nombre: " + mq1.getNom() + "Apellido: " + mq1.getApe() + "Correo: " + mq1.getCorreo() + "Telefono: " + mq1.getTel() + "Salario: " + mq1.getSal() + "\n";
+            }
                 break;
+
+        }
+        ob.mostrarRes(m);
+    }
+    
+    public void nomEmpl(){
+        int id;
+        id=ob.pedirEntero("Ingrese la cedula del empleado");
+        boolean est=false;
+        int ind=0;
+        for(int i=0; i<em.length; i++){
+            if(em[i].getCc()==id){
+                est=true;
+                ind=i;
+            }
+        }        
+       if(est) {       
+          ob.mostrarRes("La nomina de "+em[ind].getNom()+" es: "+em[ind].getSal());
+       }else{
+           ob.mostrarRes("Cedula invalida");
+       }
+    }
+    
+    public void empMillon(){
+        String m="";
+        for (Empleado em2 : em) {
+            if (em2.getSal() == 1000000) {
+                m += "Cedula: " + em2.getCc() + "Nombre: " + em2.getNom() + "Apellido: " + em2.getApe() + "Correo: " + em2.getCorreo() + "Telefono: " + em2.getTel() + "Salario: " + em2.getSal() + "\n";
+            }else{
+                ob.mostrarRes("Nsingun empleado gana el salario minimo de $1M");
+            }
         }
         ob.mostrarRes(m);
     }
