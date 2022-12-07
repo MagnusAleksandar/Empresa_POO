@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
-/**
- *
- * @author DJJORGEGUTIERREZ
- */
 public class Maquina extends Operario{
+    
+    public Maquina(int id, String nom, String ape, double tel, double cc, double sal, String correo, int he, double st) {
+        super(id, nom, ape, tel, cc, sal, correo, he, st);
+    }
     
 }
