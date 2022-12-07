@@ -17,7 +17,7 @@ public class Ejecutar {
         d.mostrarRes("Bienvenido a EmpresasFactoy's");
         menuPrin();
 }
-    void menuPrin(){
+    public void menuPrin(){
         int resp;
         do{
             d.mostrarRes("1. Agregar empleado.\n"
@@ -29,7 +29,7 @@ public class Ejecutar {
                     + "7. salir.\n");
             resp=d.pedirEntero("ingrese el id de la operación que desea realizar");
             switch(resp){
-                case 1:p.pedirDatos();break;
+                case 1:p.menusec();break;
                 case 2:p.mostrarEmp();break;
                 case 3:p.mostrarTodos();break;
                 case 4:p.mostrarCat();break;
