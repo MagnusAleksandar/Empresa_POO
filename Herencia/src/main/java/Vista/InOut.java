@@ -20,6 +20,9 @@ public class InOut {
    public double pedirDouble(String m){
         return  Double.parseDouble(JOptionPane.showInputDialog(m));
     } 
+   public char pedirChar(String m){
+       return JOptionPane.showInputDialog(m).charAt(0);
+   }
  
       
     public void mostrarRes(String m){
