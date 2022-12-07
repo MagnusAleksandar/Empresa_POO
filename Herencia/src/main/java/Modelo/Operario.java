@@ -22,6 +22,10 @@ public class Operario extends Empleado{
         this.horaExtra = horaExtra;
     }
 
+    public double getSubTrans() {
+        return subTrans;
+    }
+
     public void setSubTrans(double subTrans) {
         this.subTrans = subTrans;
     }
