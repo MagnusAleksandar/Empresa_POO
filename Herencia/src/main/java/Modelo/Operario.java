@@ -3,33 +3,43 @@ package Modelo;
 import Vista.InOut;
 
 public class Operario extends Empleado{
-    InOut ob=new InOut();
-   private int horaExtra;
-   private double subTrans;
-   
-   public Operario(int horasExtras,double subTrans){
-        this.horaExtra=horasExtras;
-        this.subTrans=subTrans;
-   }
-
-    public Operario() {
+    private int horaExtra;
+    private double subTrans;
+    private int descS;
+    private int descP;
+    
+    public Operario(int id, String nom, String ape, double tel, double cc, double sal, String correo,int he,double st) {
+        super(id, nom, ape, tel, cc, sal, correo);
+        this.horaExtra=he;
+        this.subTrans=st;
     }
-   
-   public double CalHoras(){
-       int valorHora=0;
-       double hoE = horaExtra*valorHora;
-       return hoE;  
-   }
-   public double calSubTrans(){
-       String op;
-       op=ob.pedirString("Cuanta con moto?");
-       if("s".equals(op)||"S".equals(op)){
-           subTrans=0.02*salario;
-       }else{
-           subTrans=200000;                  
-       }      
-       return subTrans;
-   }
-   
+
+    public int getHoraExtra() {
+        return horaExtra;
+    }
+
+    public void setHoraExtra(int horaExtra) {
+        this.horaExtra = horaExtra;
+    }
+
+    public void setSubTrans(double subTrans) {
+        this.subTrans = subTrans;
+    }
+
+    public int getDescS() {
+        return descS;
+    }
+
+    public void setDescS(int descS) {
+        this.descS = descS;
+    }
+
+    public int getDescP() {
+        return descP;
+    }
+
+    public void setDescP(int descP) {
+        this.descP = descP;
+    }
 }
 
