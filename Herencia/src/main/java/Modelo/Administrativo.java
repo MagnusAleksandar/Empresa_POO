@@ -5,8 +5,8 @@ public class Administrativo extends Empleado {
     private int descP;
     private double cuotLibranza;
     
-    public Administrativo(int id, String nom, String ape, double tel, double cc, double sal, String correo) {
-        super(id, nom, ape, tel, cc, sal, correo);
+    public Administrativo(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t) {
+        super(id, nom, ape, tel, cc, sal, correo,t);
     }
 
     public int getDescS() {
