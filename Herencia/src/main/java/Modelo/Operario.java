@@ -8,8 +8,8 @@ public class Operario extends Empleado{
     private int descS;
     private int descP;
     
-    public Operario(int id, String nom, String ape, double tel, double cc, double sal, String correo,int he,double st) {
-        super(id, nom, ape, tel, cc, sal, correo);
+    public Operario(int id, String nom, String ape, double tel, double cc, double sal, String correo,char t, int he,double st) {
+        super(id, nom, ape, tel, cc, sal, correo, t);
         this.horaExtra=he;
         this.subTrans=st;
     }
