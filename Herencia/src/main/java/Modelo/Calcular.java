@@ -228,7 +228,7 @@ public class Calcular {
             if (em2.getSal() == 1000000) {
                 m += "Cedula: " + em2.getCc() + "Nombre: " + em2.getNom() + "Apellido: " + em2.getApe() + "Correo: " + em2.getCorreo() + "Telefono: " + em2.getTel() + "Salario: " + em2.getSal() + "\n";
             }else{
-                ob.mostrarRes("Nsingun empleado gana el salario minimo de $1M");
+                ob.mostrarRes("Ningun empleado gana el salario minimo de $1M");
             }
         }
         ob.mostrarRes(m);
